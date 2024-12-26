@@ -1,0 +1,734 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap');
+
+/* Base Rule */
+
+* {
+    font-family: 'Poppins', sans-serif;
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    outline: none;
+    border: none;
+    transition: all.2s linear;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 62.5%;
+    scroll-behavior: smooth;
+    font-family: 'arial', sans-serif;
+}
+
+body {
+    color: var(--text-color);
+}
+
+a {
+    text-decoration: none;
+    color: #000;
+}
+
+li {
+    list-style: none;
+}
+
+img {
+    width: 100%;
+}
+
+/** SCROLLBAR **/
+
+::-webkit-scrollbar {
+    width: .9rem;
+}
+
+::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--maincolor);
+    border-radius: 1rem;
+
+}
+
+/** MODULE RESUABLE **/
+
+#title {
+    text-align: center;
+    font-size: 50px;
+    color: var(--maincolor);
+}
+
+.heading {
+    text-align: center;
+}
+
+.heading span {
+    font-size: 40px;
+    background: rgba(255, 165, 0, .2);
+    color: var(--maincolor);
+    border-radius: 8px;
+    padding: 3px 10px;
+}
+
+.heading span.space {
+    background: none;
+}
+
+
+/* THEME */
+:root {    
+    --maincolor: #fc7c12;
+    --secondarycolor: #d66500;
+}
+
+/** SCROLLBAR **/
+
+::-webkit-scrollbar {
+    width: .9rem;
+}
+
+::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--maincolor);
+    border-radius: 1rem;
+
+}
+
+/* layout */
+.container {
+    max-width: 90%;
+    margin: 0 auto;
+}
+
+section {
+    padding: 7rem 0rem 3rem 5rem;
+    margin: 0 auto;
+}
+
+
+/** ========= Navbar ================== **/
+
+
+header .sticky {
+    background: white;
+    box-shadow: 1px 1px 18px #808080;
+
+}
+
+header {
+    display: block;
+    width: 100%;
+    position: fixed;
+    z-index: 100;
+    transition: .3s linear;
+
+
+}
+
+.nav-section.shadow {
+    box-shadow: var(--box-shadow);
+}
+
+.nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 2rem 0;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: .8rem;
+    font-size: 2.5rem;
+    /* color: var(--text-color); */
+    color: #0056b3;
+    text-transform: uppercase;
+    font-weight: 600;
+    letter-spacing: .15rem;
+    margin-left: 3rem;
+
+    & img {
+        width: 3.8rem;
+    }
+}
+
+.navbar {
+    display: flex;
+    gap: 4rem;
+
+    & a {
+        color: var(--text-color);
+        font-size: 1.6rem;
+        text-transform: uppercase;
+        font-weight: 600;
+        position: relative;
+        transition: .3s linear;
+
+        &::after {
+            position: absolute;
+            content: '';
+            background: var(--secondarycolor);
+            height: .2rem;
+            width: 100%;
+            bottom: -.2rem;
+            left: 0;
+            transform: scaleX(0);
+            transition: .3s linear;
+        }
+    }
+}
+
+.navbar a:hover::after {
+    transform: scale(1);
+
+}
+
+.navbar a:hover {
+    color: var(--maincolor);
+}
+
+.inout {
+    display: flex;
+    gap: 2rem;
+    margin-right: 3rem;
+
+    & a {
+        color: var(--text-color);
+        font-size: 1.6rem;
+        text-transform: uppercase;
+        font-weight: 600;
+        position: relative;
+        transition: .3s linear;
+    }
+}
+
+
+
+.inout a:hover {
+    color: var(--maincolor);
+}
+
+
+
+
+/** ========= HOME ================== **/
+
+.home {
+    height: 100vh;
+    max-width: 100%;
+    background-image: url('../../Data/501211-everest-4k-wallpaper.jpg');
+    background-size: cover;
+    background-position: center;
+}
+
+.con {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    margin-left: 25vh;
+}
+
+.home-text h1 {
+    font-size: 3rem;
+    padding-top: 8vh;
+    color: #4e0202;
+    font-family: 'Paytone One', sans-serif;
+    letter-spacing: 4px;
+
+}
+
+.home-text p {
+    color: #ffffffbf;
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 38px;
+    margin-bottom: 2rem;
+    padding: ;
+}
+
+.hbutton {
+    display: inline-block;
+    padding: 1.3rem 2rem;
+    background-color: var(--maincolor);
+    color: #fff;
+    text-decoration: none;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 1.5rem;
+    font-weight: 500;
+
+    &:hover {
+        background-color: #0056b3;
+        color: #fff;
+    }
+}
+
+/*******  Most Popular Packages ******/
+
+.grid-layout {
+    display: grid;
+    /* width: 90%; */
+    grid-template-columns: repeat(auto-fit, minmax(48rem, 1fr));
+    gap: 2rem;
+    margin: auto;
+}
+
+.allpack {
+    margin-top: 5rem;
+    gap: 4rem 3rem;
+    grid-template-columns: repeat(auto-fit, minmax(48rem, 1fr));
+    /* Move this line inside .allpack */
+}
+
+.card {
+    width: 500px;
+    height: 320px;
+    border: 6px solid var(--maincolor);
+    border-radius: 20px;
+    overflow: hidden;
+    position: relative;
+    cursor: pointer;
+}
+
+
+
+.card-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 10px;
+    transition: .5s ease-in;
+}
+
+.card-body {
+    width: 100%;
+    height: 100%;
+    top: 0;
+    right: -100%;
+    position: absolute;
+    background: #1f3d4738;
+    backdrop-filter: blur(5px);
+    border-radius: 10px;
+    color: #fff;
+    padding: 200px;
+    display: flex;
+    flex-direction: column;
+    transition: 1s;
+    overflow: hidden;
+
+    & h1 {
+        font-size: 2rem;
+        font-weight: 600;
+        color: var(--maincolor);
+    }
+
+    & p {
+        font-size: 1.5rem;
+        font-weight: 600;
+
+        overflow: hidden;
+    }
+}
+
+.card:hover .card-body {
+    right: 0;
+}
+
+.card-title {
+    text-transform: uppercase;
+    font-size: 30px;
+    font-weight: 500;
+}
+
+.card .btn {
+    width: 8rem;
+}
+
+#see {
+    font-size: 2rem;
+    color: #fff;
+    background-color: #d66500;
+    padding: 1rem 17rem;
+    border-radius: 4rem;
+    margin-top: auto;
+
+    &:hover {
+        color: black;
+    }
+}
+
+/*******  END Most Popular Packages ******/
+
+
+/*******  Category Section ******/
+
+
+.cat-title {
+    color: var(--maincolor);
+    font-size: 4rem;
+}
+
+.row-item {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
+
+
+    & h2 {
+        font-size: 3rem;
+        color: var(--maincolor);
+        margin: 10px 0;
+    }
+
+}
+
+.item {
+    height: 30rem;
+    width: 30rem;
+    text-align: center;
+    border: 2px solid red;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    align-items: center;
+}
+
+
+.item:hover {
+    transform: scale(0.98);
+    border-radius: 20px;
+    box-shadow: 0px 0px 30px 1px rgba(255, 123, 0, 0.932);
+}
+
+#cat-pic {
+    width: 25rem;
+    height: auto;
+}
+
+/*******  END Most Popular Packages ******/
+
+/*******  Services ******/
+
+
+.box-container {
+    margin-top: 3rem;
+    grid-template-columns: repeat(auto-fit, minmax(46rem, 1fr));
+
+}
+
+.box-container .box {
+    height: 30rem;
+    width: 50rem;
+    border-radius: 30px;
+    text-align: center;
+
+    & img {
+        height: 10rem;
+        width: 10rem;
+    }
+
+}
+
+.service .box-container .box i {
+    padding: 16px;
+    font-size: 50px;
+    color: #333;
+}
+
+.service .box-container .box h3 {
+
+    font-size: 30px;
+    color: #333;
+}
+
+.service .box-container .box p {
+    font-size: 20px;
+    color: #666;
+    padding: 16px 0;
+}
+
+.service .box-container .box:hover {
+    box-shadow: 0 16px 50px rgba(0, 0, 0, .4);
+}
+
+/*******  Services End ******/
+
+
+/*******  blogs and review section ******/
+
+.mixed {
+    background-color: #f1faee;
+}
+
+.ro {
+    display: flex;
+    gap: 10rem;
+    justify-content: center;
+}
+
+.blo {
+    height: 655px;
+    width: 445px;
+
+}
+
+
+.head-title {
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    margin-bottom: 40px;
+}
+
+.head-title .title__primary {
+    margin-bottom: 0;
+    padding-bottom: 20px;
+    margin-top: 0;
+    text-transform: capitalize;
+    font-size: 40px;
+    color: #253d52;
+    font-weight: 600;
+}
+
+.title-line {
+    margin-top: -10px;
+}
+
+.tl-1 {
+    width: 90px;
+    height: 2px;
+    display: inline-block;
+    background: #f9a84c;
+}
+
+.tl-2 {
+    display: inline-block;
+    height: 12px;
+    margin: 0 5px;
+    position: relative;
+    top: 5px;
+    width: 12px;
+    border: 2px solid #f9a84c;
+    border-radius: 50px;
+}
+
+.tl-3 {
+    width: 90px;
+    height: 2px;
+    display: inline-block;
+    background: #f9a84c;
+}
+
+
+.swiper {
+    /*for blog-section*/
+    height: 480px;
+    width: 445px;
+    padding: 0px 15px;
+}
+
+.swiper-wrapper {
+    margin: 10px;
+
+}
+
+.swiper-slide .collabe-bg {
+    height: 300px;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    position: relative;
+    z-index: -1;
+}
+
+.swiper-slide .news-detail {
+    height: 190px;
+    width: 382px;
+    background: #fff;
+    color: #000;
+    margin-top: -75px;
+    z-index: 999;
+    left: 4%;
+    position: relative;
+    padding: 20px;
+    box-shadow: 1px 1px 9px 1px #0000004d;
+
+    & .post-info {
+        font-size: 15px;
+    }
+
+    & p {
+        font-size: 17px;
+    }
+
+    & a {
+        font-size: 18px;
+    }
+
+    & .blog-read {
+        color: #fff;
+        background-color: #F89406;
+        border-radius: 6px;
+        padding: 2px 10px;
+
+        &:hover {
+            color: #000;
+        }
+    }
+
+}
+
+.testimonial-section {
+    /*testimonial-section*/
+    height: 635px;
+    width: 625px;
+}
+
+.tour-reviews {
+    margin-bottom: 30px;
+    padding-bottom: 30px;
+    overflow: hidden;
+    border-bottom: 1px dashed #ececec;
+    font-size: 14px;
+}
+
+.tour-reviews .info {
+    float: left;
+}
+
+.tour-reviews .info .logoc {
+    margin-bottom: 20px;
+    border-radius: 100%;
+    border: 6px solid #fff;
+    box-shadow: 0 2px 3px rgba(0, 0, 0, 0.09);
+    height: 94px;
+    object-fit: contain;
+    width: 100px;
+}
+
+.tour-reviews .info_name {
+    font-weight: 600;
+    text-transform: capitalize;
+    font-family: "Quicksand", sans-serif;
+}
+
+.tour-reviews .content {
+    width: 100%;
+    padding-left: 170px;
+}
+
+.tour-reviews .title {
+    margin: 10px 0;
+    font-size: 1.333em;
+    font-weight: 700;
+    font-style: normal;
+}
+
+.tour-reviews .description {
+    color: #686868;
+}
+
+.tour-reviews .rating {
+    margin-top: 10px;
+    color: #ffcd47;
+    font-size: 1.2em;
+}
+
+.rating .testi {
+    font-size: 14px;
+    color: #000;
+    background: #f89406;
+    padding: 5px 10px;
+    border-radius: 6px;
+}
+
+
+/*******  review and blogs Section  End ******/
+
+/*******  Footer Section  ******/
+footer {
+
+    background-image: url('../../Data/bf\ footer.png');
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    padding: 20px 0;
+    color: #fff;
+    margin-top: 120px;
+    bottom: 0;
+    color: black;
+    font-size: 2rem;
+}
+
+.about {
+    width: 90%;
+    margin: auto;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    justify-content: space-between;
+    font-size: 1.8rem;
+    text-decoration: none;
+
+}
+
+.col {
+    flex-basis: 25%;
+    padding: 30px;
+    text-decoration: none;
+}
+
+.col h3 {
+    width: fit-content;
+    margin-bottom: 40px;
+    position: relative;
+    border-bottom: 2px solid;
+}
+
+.email-id {
+    font-weight:bold ;
+}
+
+.navi li {
+    list-style: none;
+    margin-bottom: 12px;
+
+}
+
+.social a i {
+    height: 40px;
+    width: 40px;
+    border-radius: 20px;
+    background: var(--maincolor);
+    line-height: 40px;
+    text-align: center;
+    font-size: 20px;
+    color: #000;
+    transition: .5s linear;
+
+}
+
+.social a:hover i {
+    background: #000;
+    color: #fff;
+    transform: rotate(360deg);
+}
+
+hr {
+    width: 90%;
+    border: 0;
+    border-bottom: 1px solid #ccc;
+    margin: 20px auto;
+}
+
+.copyright {
+    text-align: center;
+    color: #fff;
+}
+
+/*******  Footer Section  End ******/
